@@ -7,8 +7,7 @@ the full ML lifecycle end to end, not just call an API and call it AI.
 ## Why this exists
 
 Most "AI health" side projects are a chatbot wrapped around an LLM
-prompt. This isn't that. The goal was to understand — and be able to
-explain in an interview — what "training a model" actually means
+prompt. This isn't that. The goal was to understand — what "training a model" actually means
 mechanically: a baseline, a loss function, gradients, and an honest
 comparison at the end.
 
