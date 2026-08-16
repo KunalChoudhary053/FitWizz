@@ -1,0 +1,10 @@
+{
+  "mean_baseline": {
+    "mae": 6.77,
+    "rmse": 9.63
+  },
+  "linear_baseline": {
+    "mae": 6.94,
+    "rmse": 9.97
+  }
+}

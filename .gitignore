@@ -1,0 +1,15 @@
+# Real personal health data -- never commit this
+data/daily_health.csv
+data/model_ready.csv
+
+# Trained model artifacts -- reproducible via training script, stay local
+models/*.joblib
+
+# Secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.DS_Store
