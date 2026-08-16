@@ -1,8 +1,10 @@
 <svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="680" height="320" fill="#FFFFFF"/>
+
   <path d="M60,110 C220,110 220,250 340,250 C460,250 460,110 600,110" fill="none" stroke="#444444" stroke-width="2"/>
 
-  <text x="52" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666666">more wrong</text>
-  <text x="52" y="255" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666666">less wrong</text>
+  <text x="90" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666666">more wrong</text>
+  <text x="90" y="255" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#666666">less wrong</text>
 
   <circle cx="150" cy="145" r="6" fill="#D85A30" opacity="0.35"/>
   <circle cx="190" cy="178" r="6" fill="#D85A30" opacity="0.5"/>
