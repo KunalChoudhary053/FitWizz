@@ -25,6 +25,44 @@ comparison at the end.
 - **Backprop written by hand before using PyTorch.** `03_nn_from_scratch.py` implements the forward pass, MSE loss, and full backpropagation with plain NumPy — no autograd. This is the part of ML most practitioners never actually build themselves.
 - **Diet/alcohol/illness are acknowledged as an unresolved confound**, not claimed as controlled — there's no reliable daily food-logging data behind that claim, so the honest move is naming the gap rather than hand-waving it.
 
+## How training actually works, in plain language
+
+A neural net is a guessing machine with adjustable numbers inside it.
+Training means: make a guess, check how wrong it was, and nudge the
+numbers slightly to be less wrong next time -- repeated thousands of
+times until it settles somewhere.
+
+![How the model learns](docs/how-it-learns.svg)
+
+The curve represents how wrong a guess is -- high up the slope means
+very wrong, the bottom means as right as the model could get. Training
+starts at a random, bad guess and rolls downhill one small step at a time.
+
+- **Forward pass** -- plug in steps and sleep, see what HRV number the
+  model currently predicts. Checking where the ball sits right now.
+- **Loss** -- a number measuring how wrong that guess was. How high up
+  the slope the ball is.
+- **Backpropagation** -- working out which direction is downhill from
+  wherever the ball currently sits. Not moving it yet, just calculating
+  the direction.
+- **Gradient descent** -- actually rolling it one small step in that
+  downhill direction.
+- **Epoch** -- one full roll. This project ran 5,000 of them in a row.
+- **Weights** -- the ball's position, as actual numbers. The "2 inputs
+  -> 4 hidden neurons -> 1 output" architecture just means there were a
+  modest number of these adjustable numbers -- kept small on purpose,
+  since there were only 273 training days to learn from.
+
+**What actually happened here:** the training loss dropped from 1958
+to 40.7 and flattened out -- proof the model genuinely found a low
+point on the training data's hill. But that low point was specific to
+the shape of *that* hill. Moved onto the test days -- a different
+hill, since it's different data -- the same spot wasn't low anymore.
+Test error (7.43ms) came in worse than simply guessing the average
+(6.77ms). That gap between "fits training data" and "loses to a dumb
+average on new data" is what overfitting looks like in practice, not
+a bug in the code.
+
 ## Pipeline
 
 | File | What it does |
