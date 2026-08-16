@@ -6,5 +6,8 @@
   "linear_baseline": {
     "mae": 6.94,
     "rmse": 9.97
+  },
+  "nn_from_scratch": {
+    "mae": 7.43
   }
 }
